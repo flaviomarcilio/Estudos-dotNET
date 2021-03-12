@@ -17,6 +17,23 @@ namespace Bank
                
         }
 
+        public double Fechar()
+        {
+            if (this.Saldo == 0)
+            {
+                return 0;
+            } 
+            else if (this.Saldo > 0)
+            {
+                Console.WriteLine("Você possui um saldo de {0}", this.Saldo);
+                return this.Saldo;
+            }
+            else{
+                Console.WriteLine("Você possui um débito de {0}", this.Saldo);
+                return this.Saldo;
+            }
+        }
+
         public bool Sacar(double valorSaque)
         {
             // Validação de saldo suficiente
@@ -56,8 +73,6 @@ namespace Bank
             retorno += "Credito " + this.Credito;
             return retorno;
         }
-
-
     }
 
 }
